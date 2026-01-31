@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+
+xcuserdata
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+IDEWorkspaceChecks.plist
+
+/build
+.build
+
+.vscode
+.swiftpm
+/XCFrameworks
+Package.resolved
