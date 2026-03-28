@@ -3,16 +3,16 @@
 import PackageDescription
 import Foundation
 
-let version = "0.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f"
-let commonVersion = Version("24.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let navigationNativeVersion = Version("324.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let coreMapsVersion = Version("11.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
+let version = "0.20.1-SNAPSHOT-03-28--12-09.git-13ddd7c"
+let commonVersion = Version("24.20.1-SNAPSHOT-03-28--12-09.git-13ddd7c")
+let navigationNativeVersion = Version("324.20.1-SNAPSHOT-03-28--12-09.git-13ddd7c")
+let coreMapsVersion = Version("11.20.1-SNAPSHOT-03-28--12-09.git-13ddd7c")
 
-let checksumNavSdkBase = "538e7292a0eed37fb7b7a2c8f52ba69f9a4f78a03ae411073d5f2d41f42bb0a2"
-let checksumNavSdk = "4aaafa9d1d70bdbc79fa84cd9fb6d3fbe7a7d1247173d9b845fc1ea69a5e04b5"
-let checksumNavSdkMapComponents = "40cd92767197cd0aa9378489c877a57dcb22544d95feaa36758d1542a5b60310"
-let checksumNavSdkNavigation = "da50ed2b0b71d7c0cccc90520191106c7764bf6faf3eff5bd47d343ad81fd3e6"
-let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed1ce99a9f1f9826"
+let checksumNavSdkBase = "647b14ba7d70a78c317dd99acd2931dc137b0724d0767913e0fc6d684653a658"
+let checksumNavSdk = "b7a0ebdc941a3a8be7ce1cd456335df9f9bbfccd8170633822c98248f6385301"
+let checksumNavSdkMapComponents = "75da2cdbb6dbec1c4958f77488982c955f4fa4395ad7b36ce8558e125011842a"
+let checksumNavSdkNavigation = "5e6abf0fc35f58b0683cf9edc442c3faa54f8c98dc1925c659e060387d5c7877"
+let checksumMapsComponents = "2c75a1dbc803c79781c5f49a4f1b68d01a4eef4d30c7a47ca77f9affd8a80e5e"
 
 let releaseType = "snapshots"
 
