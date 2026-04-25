@@ -17,12 +17,12 @@ let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed
 let releaseType = "snapshots"
 
 let package = Package(
-    name: "MapboxNavSDK",
+    name: "MapboxNavigationCpp",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "MapboxNavSDK",
-            targets: ["MapboxNavSDKWrapper"]
+            name: "MapboxNavigationCpp",
+            targets: ["MapboxNavigationCppWrapper"]
         )
     ],
     dependencies: [
@@ -32,7 +32,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "MapboxNavSDKWrapper",
+            name: "MapboxNavigationCppWrapper",
             dependencies: [
                 .product(name: "MapboxCommon", package: "mapbox-common-ios"),
                 .product(name: "MapboxCoreMaps", package: "mapbox-core-maps-ios"),
