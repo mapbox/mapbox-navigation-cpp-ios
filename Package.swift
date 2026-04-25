@@ -3,26 +3,26 @@
 import PackageDescription
 import Foundation
 
-let version = "0.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f"
-let commonVersion = Version("24.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let navigationNativeVersion = Version("324.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let coreMapsVersion = Version("11.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
+let version = "0.24.0-SNAPSHOT-04-25--07-46.git-f2863f4"
+let commonVersion = Version("24.24.0-SNAPSHOT-04-25--07-46.git-f2863f4")
+let navigationNativeVersion = Version("324.24.0-SNAPSHOT-04-25--07-46.git-f2863f4")
+let coreMapsVersion = Version("11.24.0-SNAPSHOT-04-25--07-46.git-f2863f4")
 
-let checksumNavSdkBase = "538e7292a0eed37fb7b7a2c8f52ba69f9a4f78a03ae411073d5f2d41f42bb0a2"
-let checksumNavSdk = "4aaafa9d1d70bdbc79fa84cd9fb6d3fbe7a7d1247173d9b845fc1ea69a5e04b5"
-let checksumNavSdkMapComponents = "40cd92767197cd0aa9378489c877a57dcb22544d95feaa36758d1542a5b60310"
-let checksumNavSdkNavigation = "da50ed2b0b71d7c0cccc90520191106c7764bf6faf3eff5bd47d343ad81fd3e6"
-let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed1ce99a9f1f9826"
+let checksumNavSdkBase = "442019d16272a1263884856708ab7a5f2882bbc77d2947da991845050915d0f0"
+let checksumNavSdk = "8e3c0ada3194b15bb718e5c4a046944657655fc17a2af730f7eb1a37ceac7e04"
+let checksumNavSdkMapComponents = "697345b874eb7166c1c2aa756b7ce570ea67e77b9bc94372730739ec520113af"
+let checksumNavSdkNavigation = "4f92e2805156dce4c0d3ef68359ea19e40a11f506a50a65625bd49ecde2396d8"
+let checksumMapsComponents = "00a5094e2e3f371a227eeed93f2bf0b2837808c4aaff5778f604d6ee5461501a"
 
 let releaseType = "snapshots"
 
 let package = Package(
-    name: "MapboxNavSDK",
+    name: "MapboxNavigationCpp",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "MapboxNavSDK",
-            targets: ["MapboxNavSDKWrapper"]
+            name: "MapboxNavigationCpp",
+            targets: ["MapboxNavigationCppWrapper"]
         )
     ],
     dependencies: [
@@ -32,7 +32,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "MapboxNavSDKWrapper",
+            name: "MapboxNavigationCppWrapper",
             dependencies: [
                 .product(name: "MapboxCommon", package: "mapbox-common-ios"),
                 .product(name: "MapboxCoreMaps", package: "mapbox-core-maps-ios"),
