@@ -8,11 +8,11 @@ let commonVersion = Version("24.22.4")
 let navigationNativeVersion = Version("324.22.4")
 let coreMapsVersion = Version("11.22.4")
 
-let checksumNavSdkBase = "cd82f38e2a9527ec84955dc2c2c064a23025a477e65a9205ce648f7806ec5d01"
-let checksumNavSdk = "6da953d1116631fb1b85dd56730131c764d9a1d02387b790cad0cbde90a74804"
-let checksumNavSdkMapComponents = "78af2b479254a617e0e381bc4373c794071461827fe5c290406c1de968b75bd7"
-let checksumNavSdkNavigation = "414fa9d92af6bfc9a7b7c74939e1a8e06dfde2a1ea9ab3308ada114ddb078ec8"
-let checksumMapsComponents = "784f25031e18d5c4fd68d368735e5fe4699b85952ee7d9cffc0495b06b37a55d"
+let checksumNavSdkBase = "8b2c7e2c5c9538cfa415cf8cd50e0a263c86eb27fa9f370d2c53cfeca11be19e"
+let checksumNavSdk = "788f1cbf75b0b3afc4d12747b079a091aca3c88d4554807793f84cd3074b7606"
+let checksumNavSdkMapComponents = "8ddc26ab26f6ffdfc5b9cce4c42320a9e1e54f29bb69177dae0cf59728261efd"
+let checksumNavSdkNavigation = "e58e853edc7bdc6d4abb2193aec44ab54e48c9e5dc41cb45b0fea73f0d63a2d2"
+let checksumMapsComponents = "8d9f03f22dda8ec58d4df004f60d6c3113a0fcd4cc6633d35bcdd4755f84fedc"
 
 let releaseType = "releases"
 
