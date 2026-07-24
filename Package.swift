@@ -3,18 +3,18 @@
 import PackageDescription
 import Foundation
 
-let version = "0.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f"
-let commonVersion = Version("24.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let navigationNativeVersion = Version("324.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let coreMapsVersion = Version("11.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
+let version = "0.27.0"
+let commonVersion = Version("24.27.0")
+let navigationNativeVersion = Version("324.27.0")
+let coreMapsVersion = Version("11.27.0")
 
-let checksumNavSdkBase = "538e7292a0eed37fb7b7a2c8f52ba69f9a4f78a03ae411073d5f2d41f42bb0a2"
-let checksumNavSdk = "4aaafa9d1d70bdbc79fa84cd9fb6d3fbe7a7d1247173d9b845fc1ea69a5e04b5"
-let checksumNavSdkMapComponents = "40cd92767197cd0aa9378489c877a57dcb22544d95feaa36758d1542a5b60310"
-let checksumNavSdkNavigation = "da50ed2b0b71d7c0cccc90520191106c7764bf6faf3eff5bd47d343ad81fd3e6"
-let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed1ce99a9f1f9826"
+let checksumNavSdkBase = "1586a9e15e87b0b1e8d5602d87240eca87da0c153e9938aff7a8737160afb69b"
+let checksumNavSdk = "e56ea93c8e41d6898c3e9491bf5ad0c8eba2247932a7aa867411b002fabe77af"
+let checksumNavSdkMapComponents = "8b2ac3ad3205e7e1ab181235f42bab441caaa1a974ef9ea938483a4be785ca3e"
+let checksumNavSdkNavigation = "2eacb850d2785596bd47c4af92452115c4d54e54dc4351dfdd6068e6c04b2ea3"
+let checksumMapsComponents = "18d23fa6dc7915546edebb99496a44312202c791ea3e8877fa27e6b98160f309"
 
-let releaseType = "snapshots"
+let releaseType = "releases"
 
 let package = Package(
     name: "MapboxNavigationCpp",
