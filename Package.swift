@@ -3,22 +3,23 @@
 import PackageDescription
 import Foundation
 
-let version = "0.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f"
-let commonVersion = Version("24.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let navigationNativeVersion = Version("324.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let coreMapsVersion = Version("11.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
+let version = "0.28.3"
+let commonVersion = Version("24.28.3")
+let navigationNativeVersion = Version("324.28.3")
+let coreMapsVersion = Version("11.28.3")
 
-let checksumNavSdkBase = "538e7292a0eed37fb7b7a2c8f52ba69f9a4f78a03ae411073d5f2d41f42bb0a2"
-let checksumNavSdk = "4aaafa9d1d70bdbc79fa84cd9fb6d3fbe7a7d1247173d9b845fc1ea69a5e04b5"
-let checksumNavSdkMapComponents = "40cd92767197cd0aa9378489c877a57dcb22544d95feaa36758d1542a5b60310"
-let checksumNavSdkNavigation = "da50ed2b0b71d7c0cccc90520191106c7764bf6faf3eff5bd47d343ad81fd3e6"
-let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed1ce99a9f1f9826"
+let checksumNavSdkBase = "6417a0fc91efd0618d76d1a506a0271bb445dfe48e53f184786142a75f92d29f"
+let checksumNavSdk = "9b681f8aabb07dbd1c7d3d622ffdcba341889005d9a13fb9cad0e1bee4ac2434"
+let checksumNavSdkMapComponents = "c37ad48f6d23ac6f9d57aabe70cc80669f9228ac67cd9afe66ade271de417774"
+let checksumNavSdkNavigation = "8d63f091a353b60f487c5a32ffcc64e878cab27dc200a123ece6bb3e377b6fc7"
+let checksumMapsComponents = "71f4662d748edd72aacfd4d6005da1d1ea413e63c93516d37734ec467d539f87"
 
-let releaseType = "snapshots"
+let releaseType = "releases"
 
 let package = Package(
     name: "MapboxNavigationCpp",
-    platforms: [.iOS(.v14)],
+    // The Nav SDK Cpp doesn't support macOS but declared the minimum macOS requirement with downstream deps to enable `swift run` cli tools
+    platforms: [.iOS(.v14), .macOS(.v10_15)],
     products: [
         .library(
             name: "MapboxNavigationCpp",
