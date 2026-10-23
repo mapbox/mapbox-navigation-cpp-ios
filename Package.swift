@@ -15,12 +15,12 @@ let commonVersion = Version("24.30.7")
 let navigationNativeVersion = Version("324.30.7")
 let coreMapsVersion = Version("11.30.7")
 
-let checksumNavSdkBase = "fd2e522aed5d3b50dab7f9f628662445582cbb3150beef023f0ea6fe62270436"
-let checksumNavSdk = "e67c6d00db8b2380064eef60b4c1034baf6a25df33cfabda1be9c48cf90b2c04"
-let checksumNavSdkMapComponents = "6e54f1039330446f84aefbf7d8c4b84c5792eb18acba7d3adc5cd9cacb35677d"
-let checksumNavSdkNavigation = "186059f9981288c0237d7dd13e1af55c40c32eb1a0116885fb027ee07f2385b1"
-let checksumNavSdkRoadCameras = "f970ed1c6fbed04dd9dbefe7e2967efcf8799b7dd64ed6eff1ae51b2e4fb20d2"
-let checksumMapsComponents = "dcd2f91aa6172e16f94cb9c8f2d875fc6ed1777f0dfaa4ebc6041df4d4c88f33"
+let checksumNavSdkBase = "3ed1b1d8b9385ad4e49812a16cb428042e1503465a4bf7272c2692205f8613a4"
+let checksumNavSdk = "95a84f0525f48506914b457e89297ae9aa979362c30729e24c2ec9402c6aa80e"
+let checksumNavSdkMapComponents = "5e80cea12f6b3d6c71fd77908f5264554dbf68ca043ecb478034498e760c9143"
+let checksumNavSdkNavigation = "24ed10cae9dd68d980fc60d00f9d6397ce43051cf3fe6a3ac32c8ea7d91752a8"
+let checksumNavSdkRoadCameras = "c6ac6caf2a9097861f146f89ea6f0f9691084dc20aaf13b4470aa78f31087504"
+let checksumMapsComponents = "6b4aca4cf78dee6f8f15dfa68153c4c9544ec67315b1bbb751f5cd574863f506"
 
 let releaseType = "releases"
 
