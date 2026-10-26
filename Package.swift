@@ -3,22 +3,31 @@
 import PackageDescription
 import Foundation
 
-let version = "0.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f"
-let commonVersion = Version("24.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let navigationNativeVersion = Version("324.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
-let coreMapsVersion = Version("11.20.0-SNAPSHOT-01-30--09-22.git-4c16a2f")
+let privateBetaEnabled = FileManager.default
+    .fileExists(atPath: FileManager.default
+        .homeDirectoryForCurrentUser
+        .appendingPathComponent(".mapbox-navigation-ios.navigation_sdks_private_beta")
+        .path
+    )
 
-let checksumNavSdkBase = "538e7292a0eed37fb7b7a2c8f52ba69f9a4f78a03ae411073d5f2d41f42bb0a2"
-let checksumNavSdk = "4aaafa9d1d70bdbc79fa84cd9fb6d3fbe7a7d1247173d9b845fc1ea69a5e04b5"
-let checksumNavSdkMapComponents = "40cd92767197cd0aa9378489c877a57dcb22544d95feaa36758d1542a5b60310"
-let checksumNavSdkNavigation = "da50ed2b0b71d7c0cccc90520191106c7764bf6faf3eff5bd47d343ad81fd3e6"
-let checksumMapsComponents = "1a6d1a7df1e9b5d5c27271c4448d958f9427724679758f69ed1ce99a9f1f9826"
+let version = "0.35.0-SNAPSHOT-10-26--12-44.git-300d962"
+let commonVersion = Version("24.35.0-SNAPSHOT-10-26--12-44.git-300d962")
+let navigationNativeVersion = Version("324.35.0-SNAPSHOT-10-26--12-44.git-300d962")
+let coreMapsVersion = Version("11.35.0-SNAPSHOT-10-26--12-44.git-300d962")
+
+let checksumNavSdkBase = "29cfa3c39a8f389b03b7b4797f7f5daeed5e6d54031aea1598a5c73fb585afca"
+let checksumNavSdk = "ba2b0e4939a3c367786e5e19a60a559ad0e1aac8ed8a86532a69ab02291b5dc8"
+let checksumNavSdkMapComponents = "2e8c99133728b36bcf9df6febf4eb2ba0e9c5a871861af9f126175cdff2bea39"
+let checksumNavSdkNavigation = "883c5abf4bd438a7caec9d8695167cee50a87d5dee63f5775bca72ce55f979cf"
+let checksumNavSdkRoadCameras = "dcb70c5697c313c76c2727e37855550722b86b4a12a19ce7b971520616f110cb"
+let checksumMapsComponents = "be2bf73853dda7d41c646d2d768761b704d41acf601fdedbde53432714160002"
 
 let releaseType = "snapshots"
 
 let package = Package(
     name: "MapboxNavigationCpp",
-    platforms: [.iOS(.v14)],
+    // The Nav SDK Cpp doesn't support macOS but declared the minimum macOS requirement with downstream deps to enable `swift run` cli tools
+    platforms: [.iOS(.v14), .macOS(.v10_15)],
     products: [
         .library(
             name: "MapboxNavigationCpp",
@@ -37,17 +46,12 @@ let package = Package(
                 .product(name: "MapboxCommon", package: "mapbox-common-ios"),
                 .product(name: "MapboxCoreMaps", package: "mapbox-core-maps-ios"),
                 .product(name: "MapboxNavigationNative", package: "mapbox-navigation-native-ios"),
-                "MapboxNavSdk",
                 "MapboxNavSdkBase",
                 "MapboxNavSdkMapComponents",
                 "MapboxNavSdkNavigation",
+                "MapboxNavSdkRoadCameras",
                 "MapboxMapsComponents"
-            ],
-        ),
-        .binaryTarget(
-            name: "MapboxNavSdk",
-            url: "https://api.mapbox.com/downloads/v2/navsdk-cpp-sdk/\(releaseType)/ios/\(version)/MapboxNavSdk.xcframework.zip",
-            checksum: checksumNavSdk
+            ].updatedWithBetaFeatures(),
         ),
         .binaryTarget(
             name: "MapboxNavSdkBase",
@@ -65,9 +69,42 @@ let package = Package(
             checksum: checksumNavSdkNavigation
         ),
         .binaryTarget(
+            name: "MapboxNavSdkRoadCameras",
+            url: "https://api.mapbox.com/downloads/v2/navsdk-cpp-roadcam/\(releaseType)/ios/\(version)/MapboxNavSdkRoadCameras.xcframework.zip",
+            checksum: checksumNavSdkRoadCameras
+        ),
+        .binaryTarget(
             name: "MapboxMapsComponents",
             url: "https://api.mapbox.com/downloads/v2/mobile-maps-components/\(releaseType)/ios/\(version)/MapboxMapsComponents.xcframework.zip",
             checksum: checksumMapsComponents
         ),
-    ],
+    ].updatedWithBetaFeatures(),
 )
+
+// MARK: - Private beta (MapboxNavSdk)
+
+extension [Target.Dependency] {
+    func updatedWithBetaFeatures() -> Self {
+        var dependencies = self
+        if privateBetaEnabled {
+            dependencies.append("MapboxNavSdk")
+        }
+        return dependencies
+    }
+}
+
+extension [PackageDescription.Target] {
+    func updatedWithBetaFeatures() -> Self {
+        var targets = self
+        if privateBetaEnabled {
+            targets.append(
+                .binaryTarget(
+                    name: "MapboxNavSdk",
+                    url: "https://api.mapbox.com/downloads/v2/navsdk-cpp-sdk/\(releaseType)/ios/\(version)/MapboxNavSdk.xcframework.zip",
+                    checksum: checksumNavSdk
+                )
+            )
+        }
+        return targets
+    }
+}
